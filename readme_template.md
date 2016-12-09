@@ -1,4 +1,4 @@
-# Rails Templates
+# App Name
 
 ## Contents
 
@@ -12,7 +12,7 @@
 
 ## Descritption
 
-These are templates for quickly creating rails applications.
+Description of all of the cool stuff this app does.
 
 
 ## Overview
