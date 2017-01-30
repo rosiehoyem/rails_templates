@@ -23,10 +23,27 @@ The app is hosted on Heroku.
 
 There currently is no staging instance.
 
-### Branches
+### Github
 
-* `master` is used for local development.
-* `stable` reflects a stable, tested version of the app. This branch is deployed to Heroku.
+`git branch --set-upstream-to=origin/master master`
+`git pull --allow-unrelated-histories`
+
+
+### Devise
+
+To generate views, run:
+`rails generate devise:views`
+
+Code to create login:
+```
+-if user_signed_in? 
+  p= "Logged in as <strong>" + current_user.email + "</strong>.".html_safe
+  = link_to 'Edit profile', edit_user_registration_path  |
+  = link_to "Logout", destroy_user_session_path, method: :delete 
+-else 
+  = link_to "Sign up", new_user_registration_path  |
+  = link_to "Login", new_user_session_path 
+```
 
 
 ## Dependencies

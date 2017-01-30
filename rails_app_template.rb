@@ -1,7 +1,7 @@
 # Template to create a basic Rails app with Postgres, Rspec, and my preferred dev tools
 # Rails documentation for templates http://guides.rubyonrails.org/rails_application_templates.html
 # Command to create a new rails app with this template: 
-#     rails new app_name -T --database=POSTGRES -m ../rails_templates/rails_app_template.rb
+#     rails new app_name -T --database=postgresql -m ../rails_templates/rails_app_template.rb
 
 # Choices Gem: https://github.com/mislav/choices
 # Devise Gem: https://github.com/plataformatec/devise
@@ -94,7 +94,7 @@ if yes?("Do you want to include Devise for user authentication? (y/n)")
     generate(:scaffold, "user", "first_name:string", "last_name:string")
     run 'rails generate devise User'
     rails_command "db:migrate"
-    route "root to: 'person#index'"
+    route "root to: 'user#index'"
     git add: "."
     git commit: %Q{ -m 'Added User model and Devise gem' }
   else
